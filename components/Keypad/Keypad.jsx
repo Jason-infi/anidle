@@ -15,7 +15,7 @@ const Keypad = ({ usedKeys, handleKeyUpKeypad }) => {
           return (
             <button
               key={char.key}
-              className='dark:bg-[#818384] bg-[#d3d6da]  p-1 rounded inline-block'
+              className='dark:bg-[#818384] bg-[#d3d6da]  p-2 rounded inline-block text-center '
               style={{
                 backgroundColor: `${
                   darkmode && color === "#787c7e" ? "#3a3a3c" : color
@@ -31,7 +31,7 @@ const Keypad = ({ usedKeys, handleKeyUpKeypad }) => {
           return (
             <button
               key={char.key}
-              className='dark:bg-[#818384] bg-[#d3d6da]  px-3 py-4 rounded inline-block   '
+              className='dark:bg-[#818384] bg-[#d3d6da] p-2 rounded inline-block text-center '
               onClick={() => handleKeyUpKeypad(char.key)}
             >
               {char.key.toUpperCase()}
@@ -41,14 +41,14 @@ const Keypad = ({ usedKeys, handleKeyUpKeypad }) => {
       })}
       <button
         key='enter'
-        className='dark:bg-[#818384] bg-[#d3d6da]  px-3 py-1 rounded col-span-2 '
+        className='dark:bg-[#818384] bg-[#d3d6da]  p-1 rounded col-span-2 text-center'
         onClick={() => handleKeyUpKeypad("Enter")}
       >
         ENTER
       </button>
       <button
         key='backspace'
-        className='dark:bg-[#818384] bg-[#d3d6da]  px-3 py-1 rounded col-span-2'
+        className='dark:bg-[#818384] bg-[#d3d6da]  p-1 rounded col-span-2 text-center'
         onClick={() => handleKeyUpKeypad("Backspace")}
       >
         BACK

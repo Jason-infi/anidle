@@ -13,14 +13,21 @@ const Row = ({ ansLength, guess, curGuess }) => {
           return (
             <div
               key={idx}
-              className='rowletter dark:text-white text-black border-[#878a8c]'
+              className={`rowletter dark:text-white text-black border-[#878a8c] ${
+                ansLength === 6 ? "px-4" : ""
+              }`}
             >
               {letter.toUpperCase()}
             </div>
           );
         })}
         {[...Array(ansLength - letters.length)].map((_, idx) => (
-          <div key={idx} className='rowletter text-white dark:text-black'>
+          <div
+            key={idx}
+            className={`rowletter text-white dark:text-black ${
+              ansLength === 6 ? "px-4" : ""
+            }`}
+          >
             {"x"}
           </div>
         ))}
@@ -33,7 +40,12 @@ const Row = ({ ansLength, guess, curGuess }) => {
         {Array(ansLength)
           .fill(0)
           .map((_, idx) => (
-            <div key={idx} className='rowletter text-white dark:text-black'>
+            <div
+              key={idx}
+              className={`rowletter text-white dark:text-black ${
+                ansLength === 6 ? "px-4" : ""
+              }`}
+            >
               {"x"}
             </div>
           ))}
@@ -45,7 +57,7 @@ const Row = ({ ansLength, guess, curGuess }) => {
       {guess.map((char, idx) => (
         <div
           key={idx}
-          className='rowletter'
+          className={`rowletter ${ansLength === 6 ? "px-4" : ""}`}
           style={{
             backgroundColor: `${
               darkmode && char.color === "#787c7e" ? "#3a3a3c" : char.color
