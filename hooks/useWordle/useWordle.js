@@ -90,14 +90,18 @@ const useWordle = (answer, ansLength) => {
     });
   };
 
-  const handleKeyUp = ({ key }) => {
-    if (key === "Backspace") {
+  const handleKeyUp = (e) => {
+    if (e.getModifierState("CapsLock")) {
+      toast.error("CAPSLOCK is on");
+      return;
+    }
+    if (e.key === "Backspace") {
       setCurGuess((prev) => {
         return prev.slice(0, -1);
       });
       return;
     }
-    if (key === "Enter") {
+    if (e.key === "Enter") {
       if (turn > 5) {
         return;
       }
@@ -113,10 +117,10 @@ const useWordle = (answer, ansLength) => {
       addNewGuess(formattedGuess);
     }
 
-    if (/^[A-Za-z]$/.test(key)) {
+    if (/^[A-Za-z]$/.test(e.key)) {
       if (curGuess.length < ansLength) {
         setCurGuess((prev) => {
-          return prev + key;
+          return prev + e.key;
         });
       }
     }

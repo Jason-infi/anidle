@@ -1,10 +1,10 @@
 import React from "react";
 
 const Row = ({ ansLength, guess, curGuess }) => {
-  let darkmode = false;
-  if (typeof window !== "undefined") {
-    darkmode = document.getElementsByTagName("body")[0].className === "dark";
-  }
+  // let darkmode = false;
+  // if (typeof window !== "undefined") {
+  //   darkmode = document.getElementsByTagName("body")[0].className === "dark";
+  // }
   if (curGuess) {
     let letters = [...curGuess];
     return (
@@ -15,7 +15,10 @@ const Row = ({ ansLength, guess, curGuess }) => {
               key={idx}
               className={`rowletter dark:text-white text-black border-[#878a8c] ${
                 ansLength === 6 ? "px-4" : ""
-              }`}
+              } `}
+              style={{
+                animation: "bounce 0.2s ease-in-out forwards",
+              }}
             >
               {letter.toUpperCase()}
             </div>
@@ -26,7 +29,7 @@ const Row = ({ ansLength, guess, curGuess }) => {
             key={idx}
             className={`rowletter text-white dark:text-black ${
               ansLength === 6 ? "px-4" : ""
-            }`}
+            } `}
           >
             {"x"}
           </div>
@@ -44,7 +47,7 @@ const Row = ({ ansLength, guess, curGuess }) => {
               key={idx}
               className={`rowletter text-white dark:text-black ${
                 ansLength === 6 ? "px-4" : ""
-              }`}
+              } `}
             >
               {"x"}
             </div>
@@ -53,18 +56,22 @@ const Row = ({ ansLength, guess, curGuess }) => {
     );
   }
   return (
-    <div className='flex space-x-1'>
+    <div className='flex space-x-1 row'>
       {guess.map((char, idx) => (
         <div
           key={idx}
-          className={`rowletter ${ansLength === 6 ? "px-4" : ""}`}
+          className={`rowletter ${ansLength === 6 ? "px-4" : ""} flipCard ${
+            char.color
+          }`}
           style={{
-            backgroundColor: `${
-              darkmode && char.color === "#787c7e" ? "#3a3a3c" : char.color
-            }`,
-            borderColor: `${
-              darkmode && char.color === "#787c7e" ? "#3a3a3c" : char.color
-            }`,
+            animation: "flip 0.5s ease forwards",
+            animationDelay: `${idx * 0.2}s`,
+            // backgroundColor: `${
+            //   darkmode && char.color === "#787c7e" ? "#3a3a3c" : ""
+            // }`,
+            // borderColor: `${
+            //   darkmode && char.color === "#787c7e" ? "#3a3a3c" : ""
+            // }`,
           }}
         >
           {char.key.toUpperCase()}
