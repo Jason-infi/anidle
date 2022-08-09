@@ -32,6 +32,7 @@ const linkTree = () => {
             <a
               href='https://www.linkedin.com/in/abhishek-meena-886998157'
               target='_blank'
+              rel='noreferrer'
             >
               LinkedIn
             </a>
