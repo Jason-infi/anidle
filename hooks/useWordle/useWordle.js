@@ -42,7 +42,6 @@ const useWordle = (answer, ansLength) => {
         forGuess[idx] = { key: char, color: "#787c7e" };
       }
     });
-    console.log(forGuess);
 
     return forGuess;
   };

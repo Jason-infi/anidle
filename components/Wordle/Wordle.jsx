@@ -35,7 +35,7 @@ const Wordle = ({ answer, ansLength }) => {
       window.removeEventListener("keyup", handleKeyUp);
     };
   });
-  console.log(answer);
+  // console.log(answer);
   return (
     <>
       <Grid
