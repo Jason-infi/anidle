@@ -27,9 +27,9 @@ const Navbar = () => {
         </svg>
       </div>
 
-      <div className='lg:py-3 py-2 lg:text-3xl text-2xl  text-black dark:text-white heading'>
+      <h1 className='lg:py-3 py-2 lg:text-3xl text-2xl  text-black dark:text-white heading'>
         Anidle
-      </div>
+      </h1>
       <div className='flex items-center'>
         <div>
           <svg
