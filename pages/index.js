@@ -21,10 +21,10 @@ export default function Home() {
         <meta charset='UTF-8'></meta>
         <meta
           name='viewport'
-          content='width=device-width, initial-scale=1.0, user-scalable=no'
+          content='width=device-width, initial-scale=1.0'
         ></meta>
         <meta
-          property='description'
+          name='description'
           content='Wordle, but with anime character names.Guess the name in 6 tries.'
         />
         <meta property='og:title' content='Anidle - A daily word game'></meta>
