@@ -1,0 +1,4 @@
+.mainBg {
+  @apply h-full w-full;
+  @apply bg-cover bg-no-repeat bg-center bg-cyan-600 bg-blend-lighten blur-sm;
+}

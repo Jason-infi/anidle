@@ -31,7 +31,7 @@ const Row = ({ ansLength, guess, curGuess }) => {
               ansLength === 6 ? "px-4" : ""
             } `}
           >
-            {"x"}
+            &nbsp;
           </div>
         ))}
       </div>
@@ -49,7 +49,7 @@ const Row = ({ ansLength, guess, curGuess }) => {
                 ansLength === 6 ? "px-4" : ""
               } `}
             >
-              {"x"}
+              &nbsp;
             </div>
           ))}
       </div>
